@@ -1,54 +1,42 @@
 name: Python application
 
-on:
-  push:
-    branches:
-      - "master"
-
-permissions:
-  contents: read
+on: push
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: macos-latest
+
+    permissions:
+      checks: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.10"
+    - name: setup Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
 
-      - name: Install Chrome and WebDriver
-        run: |
-          # Install Google Chrome
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo dpkg -i google-chrome-stable_current_amd64.deb
-          sudo apt-get install -f
-          
-          # Install Chrome WebDriver
-          CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d '.' -f 1)
-          wget https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION -O LATEST_RELEASE
-          wget https://chromedriver.storage.googleapis.com/$(cat LATEST_RELEASE)/chromedriver_linux64.zip
-          unzip chromedriver_linux64.zip
-          chmod +x chromedriver
-          sudo mv chromedriver /usr/local/bin/
+    - name: Install Chrome and WebDriver
+      run: |
+        brew install --cask google-chrome
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install --upgrade pytest pytest-html
 
-      - name: Run tests
-        run: |
-          python -m pytest --verbose --junit-xml=test-results.xml
 
-      - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v3
-        if: always()  # always run even if the previous step fails
-        with:
-          report_paths: '**/test-results.xml'
-          detailed_summary: true
-          include_passed: true
+    - name: Run tests
+      run: |
+        python -m pytest --verbose --junit-xml=test-results.xml
+
+    - name: Publish Test Report
+      uses: mikepenz/action-junit-report@v3
+      if: success() || failure() # always run even if the previous step fails
+      with:
+        report_paths: '**/test-results.xml'
+        detailed_summary: true
+        include_passed: true
