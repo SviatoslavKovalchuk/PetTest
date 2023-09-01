@@ -68,3 +68,4 @@ def test_full_order(open_login_page, open_item_page, open_car_page, open_checkou
     overview.click_finish_btn()
     overview.click_back_home_btn()
     assert dashboard.is_logo_visible() is True
+
