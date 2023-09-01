@@ -1,4 +1,4 @@
-name: Python_application_push_and_schedule
+name: Full_regression_schedule_and_push
 
 on:
   push:
