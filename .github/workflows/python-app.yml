@@ -3,9 +3,9 @@ name: Python_application
 #on:
 #  push:
 #    branches:
-#      - "master"
+#      - "master" # Will start the job every time after push into master branch
 #  schedule:
-#    - cron: "0 0 * * *"
+#    - cron: "0 0 * * *" # Automatic start to run the job at the scheduled time at 00:00 UTC
 on:
   workflow_dispatch:
     inputs:
