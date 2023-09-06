@@ -11,8 +11,16 @@ class CheckoutOverviewPage(BasePage):
         self.click(self.locators.finish_btn)
 
     def click_cancel_co_btn(self):
+        """
+        test for  docstring (missing-function-docstring)
+
+        """
         self.click(self.locators.cancel_checkout_overview_btn)
 
     def click_back_home_btn(self):
+        """
+        test for  docstring (missing-function-docstring)
+
+        """
         self.click(self.locators.back_home_btn)
 

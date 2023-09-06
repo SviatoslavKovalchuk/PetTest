@@ -46,4 +46,3 @@ def test_logout(open_login_page):
     dashboard.click_burger_btn()
     dashboard.click_logout_btn()
     assert login_page.logo_is_visible() is True
-
