@@ -35,7 +35,7 @@ jobs:
           python -m pytest --verbose --junit-xml=test-results.xml
       - name: Lint code with Pylint
         run: |
-          pylint tests
+          pylint --rcfile=.pylintrc tests
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v3
         if: always()
