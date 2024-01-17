@@ -23,4 +23,3 @@ class CheckoutOverviewPage(BasePage):
 
         """
         self.click(self.locators.back_home_btn)
-

@@ -30,4 +30,3 @@ class CheckoutPageLocators:
     @property
     def continue_btn(self):
         return self.__continue_btn.find_locator()
-

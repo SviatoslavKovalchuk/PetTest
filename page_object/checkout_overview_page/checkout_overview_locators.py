@@ -7,7 +7,8 @@ class CheckoutOverviewPageLocators:
     def __init__(self):
         self.__finish_btn = Locators(By.XPATH, "//*[@id='finish']")
         self.__cancel_co_btn = Locators(By.XPATH, "//*[@id='cancel']")
-        self.__back_home_btn = Locators(By.XPATH, "//*[@id='back-to-products']")
+        self.__back_home_btn = Locators(By.XPATH,
+                                        "//*[@id='back-to-products']")
 
     @property
     def finish_btn(self):

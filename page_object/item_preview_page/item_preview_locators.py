@@ -5,9 +5,14 @@ from utilities.web_ui.locators import Locators
 
 class ItemPageLocators:
     def __init__(self):
-        self.__back_to_products_btn = Locators(By.XPATH, "//*[@id='back-to-products']")
-        self.__add_to_cart_button = Locators(By.XPATH, "//*[@class='btn btn_primary btn_small btn_inventory']")
-        self.__remove_btn = Locators(By.XPATH, "//*[@class='btn btn_secondary btn_small btn_inventory']")
+        self.__back_to_products_btn = Locators(By.XPATH,
+                                               "//*[@id='back-to-products']")
+        self.__add_to_cart_button = Locators(
+            By.XPATH,
+            "//*[@class='btn btn_primary btn_small btn_inventory']")
+        self.__remove_btn = Locators(
+            By.XPATH,
+            "//*[@class='btn btn_secondary btn_small btn_inventory']")
 
     @property
     def back_to_products_btn(self):

@@ -21,18 +21,21 @@ class DriverFactory:
             chrome_options = Options()
             if is_headless:
                 chrome_options.add_argument("--headless")
-            driver = Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
+            driver = Chrome(service=ChromeService(
+                ChromeDriverManager().install()), options=chrome_options)
         elif int(driver_id) == DriverFactory.FIREFOX:
             firefox_options = FirefoxOptions()
             if is_headless:
                 firefox_options.add_argument("--headless")
-            driver = Firefox(service=FirefoxService(GeckoDriverManager().install()), options=firefox_options)
+            driver = Firefox(service=FirefoxService(
+                GeckoDriverManager().install()), options=firefox_options)
         elif int(driver_id) == DriverFactory.EDGE:
             edge_options = EdgeOptions()
             if is_headless:
                 edge_options.add_argument("--headless")
-            driver = Edge(service=EdgeService(EdgeChromiumDriverManager().install()), options=edge_options)
+            driver = Edge(service=EdgeService(
+                EdgeChromiumDriverManager().install()), options=edge_options)
         else:
-            driver = Chrome(service=ChromeService(ChromeDriverManager().install()))
+            driver = Chrome(
+                service=ChromeService(ChromeDriverManager().install()))
         return driver
-

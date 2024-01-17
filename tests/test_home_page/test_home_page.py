@@ -16,7 +16,8 @@ def test_preview_item(open_login_page, open_item_page):
     assert dashboard.is_logo_visible()
 
 
-def test_add_item_to_the_cart_and_continue(open_login_page, open_item_page, open_car_page):
+def test_add_item_to_the_cart_and_continue(
+        open_login_page, open_item_page, open_car_page):
     """"
         Verify that user can add selected item to the cart
         Verify that the user redirected to cart page
@@ -33,7 +34,8 @@ def test_add_item_to_the_cart_and_continue(open_login_page, open_item_page, open
 
 
 @pytest.mark.smoke
-def test_user_can_remove_item_from_dashboard(open_login_page, open_item_page, open_car_page):
+def test_user_can_remove_item_from_dashboard(
+        open_login_page, open_item_page, open_car_page):
     """"
         Verify that the user can remove item from cart on dashboard page
 
@@ -50,7 +52,10 @@ def test_user_can_remove_item_from_dashboard(open_login_page, open_item_page, op
 
 
 @pytest.mark.smoke
-def test_full_order(open_login_page, open_item_page, open_car_page, open_checkout_page, open_checkout_overview_page):
+def test_full_order(
+        open_login_page, open_item_page,
+        open_car_page, open_checkout_page,
+        open_checkout_overview_page):
     """"
     Verify that user could add item to the cart
     Verify that the user could create the order
@@ -68,4 +73,3 @@ def test_full_order(open_login_page, open_item_page, open_car_page, open_checkou
     overview.click_finish_btn()
     overview.click_back_home_btn()
     assert dashboard.is_logo_visible() is True
-

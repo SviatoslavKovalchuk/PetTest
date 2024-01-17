@@ -11,16 +11,22 @@ class LoginPageLocators:
         # self.__login_btn = Locators(By.XPATH, '//*[@id="login-button"]')
         # self.__error_msg = Locators(
         #     By.XPATH,
-        #     '//*[contains(text(), "Epic sadface: Username and password do not match any user in this service")]')
+        #     '//*[contains(text(), '
+        #     '"Epic sadface: Username and password do not match any user in this service")]')
         # self.__login_logo = Locators(By.XPATH, '//*[@class="login_logo"]')
 
         """CSS Locators:"""
-        self.__email_input = Locators(By.CSS_SELECTOR, "input.input_error[name='user-name']")
-        self.__password_field = Locators(By.CSS_SELECTOR, "input#password")
-        self.__login_btn = Locators(By.CSS_SELECTOR, "input[id ='login-button']")
+        self.__email_input = Locators(
+            By.CSS_SELECTOR,
+            "input.input_error[name='user-name']")
+        self.__password_field = Locators(By.CSS_SELECTOR,
+                                         "input#password")
+        self.__login_btn = Locators(By.CSS_SELECTOR,
+                                    "input[id ='login-button']")
         self.__error_msg = Locators(
              By.CSS_SELECTOR, "button[class='error-button']")
-        self.__login_logo = Locators(By.CSS_SELECTOR, "[class='login_logo']")
+        self.__login_logo = Locators(By.CSS_SELECTOR,
+                                     "[class='login_logo']")
 
     @property
     def email_input(self):

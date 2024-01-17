@@ -1,5 +1,3 @@
-import logging
-
 import pytest
 
 from page_object.cart_page.cart_page import CartPage

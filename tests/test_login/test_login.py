@@ -2,7 +2,8 @@
 For testing goal you can try to use python package x-dist
 pytest -n auto
 With this call, pytest will spawn a number of workers processes
-equal to the number of available CPUs, and distribute the tests randomly across them.
+equal to the number of available CPUs,
+and distribute the tests randomly across them.
 """
 
 import pytest

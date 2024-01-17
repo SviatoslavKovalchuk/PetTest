@@ -23,7 +23,8 @@ class LoginPage(BasePage):
         return self
 
     def login(self, user_name, password):
-        logging.info(f'entering user name{user_name}, entering password {password}')
+        logging.info(f'entering user name{user_name}, '
+                     f'entering password {password}')
         self.enter_email(user_name).enter_password(password).press_login_btn()
         return HomePage(self.driver)
 

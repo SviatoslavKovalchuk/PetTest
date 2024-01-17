@@ -5,10 +5,14 @@ from utilities.web_ui.locators import Locators
 
 class CartPageLocators:
     def __init__(self):
-        self.__continue_shopping_btn = Locators(By.XPATH, '//*[@id="continue-shopping"]')
-        self.__remove_btn = Locators(By.XPATH, '//*[@id="remove-sauce-labs-backpack"]')
-        self.__checkout_btn = Locators(By.XPATH, '//*[@id="checkout"]')
-        self.__test_locator = Locators(By.XPATH, "//*[@class='inventory_item_name']")
+        self.__continue_shopping_btn = Locators(By.XPATH,
+                                                '//*[@id="continue-shopping"]')
+        self.__remove_btn = Locators(By.XPATH,
+                                     '//*[@id="remove-sauce-labs-backpack"]')
+        self.__checkout_btn = Locators(By.XPATH,
+                                       '//*[@id="checkout"]')
+        self.__test_locator = Locators(By.XPATH,
+                                       "//*[@class='inventory_item_name']")
 
     @property
     def continue_shopping_btn(self):
