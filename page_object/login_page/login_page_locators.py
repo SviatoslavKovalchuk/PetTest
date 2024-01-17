@@ -20,7 +20,7 @@ class LoginPageLocators:
         self.__login_btn = Locators(By.CSS_SELECTOR, "input[id ='login-button']")
         self.__error_msg = Locators(
              By.CSS_SELECTOR, "button[class='error-button']")
-        self.__login_logo = Locators(By.XPATH, "[class='login_logo']")
+        self.__login_logo = Locators(By.CSS_SELECTOR, "[class='login_logo']")
 
     @property
     def email_input(self):

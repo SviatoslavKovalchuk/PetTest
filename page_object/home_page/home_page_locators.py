@@ -20,7 +20,7 @@ class HomePageLocators:
         self.__logout_btn = Locators(By.CSS_SELECTOR, 'a#logout_sidebar_link')
         self.__cart_container = Locators(By.CSS_SELECTOR, 'div[class = "shopping_cart_container"]')
         self.__backpack_item = Locators(By.CSS_SELECTOR, 'a#item_4_title_link')
-        self.__remove_btn = Locators(By.CSS_SELECTOR, 'button[class=btn btn_secondary btn_small cart_button"]')
+        self.__remove_btn = Locators(By.CSS_SELECTOR, 'button[class="btn btn_secondary btn_small btn_inventory "]')
 
     @property
     def add_to_cart(self):
